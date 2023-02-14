@@ -1,0 +1,71 @@
+
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- content='  ' 에 IE= 호환될 버전 을 써주면 된다.
+    엣지가 마이크로소프트 최신버전이기 때문에 IE=Edge을 넣어주면 된다. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--초기 크기 설정 1=꽉찬 화면 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stt.css') }}">
+    <title>음파음파의 음성회의 기록 시스템</title>
+</head>
+<form action="{{ url_for('stthtml') }}" method="POST" enctype = "multipart/form-data">
+<!--Flask불러오고 stt함수-->
+<body>
+    <div class="main-layout"><!--div영역구별, 스타일로 문서 꾸밈 -->
+        <div class="main-title"><!--제목-->
+            <h1 class="title">음성회의 기록 시스템</h1>
+        </div>
+
+        <section class="container"><!--제목&파일첨부/음성/Text 기준으로 나눔-->
+            <script src="{{ url_for('static', filename='js/stt.js') }}" ></script>
+            <div class="file-attatch1"><!--음성 파일 첨부 부분-->
+                <fieldset class="voice-attatch">
+                    <legend><b>음성파일 첨부</b></legend>
+                     <input type="text" name="text" readonly="readonly" title="File Route" id="file_route"><!-- 파일경로 부분-->
+                </fieldset>
+            </div>
+            <!--추가-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <div class="file-attatch2"><!--파일첨부 부분-->
+                <label class="input-file-button" for="upload">
+                    파일첨부
+                </label>
+                <!--onchange:변화 감지-함수호출, accept 파일 제한-->
+                <input type="file" name="file" id="upload" style="display:none" accept="audio/*" onchange="valueChanger(this)">
+            </div>
+        </section>
+        <!--수정-->
+        <section class="container">
+            <audio id="audio" controls>
+                <source src="blob:null/a4cac89a-5abd-4b7a-b7b5-d62650e33b54" id="src">
+            </audio>
+            <!--추가-->
+            <script type="text/javascript">
+                function handleFiles(event){
+                    var files = event.target.files;
+                    $("#src").attr("src", URL.createObjectURL(files[0]));
+                    document.getElementById("audio").load();
+                }
+                document.getElementById("upload").addEventListener("change", handleFiles, false);
+            </script>
+                 <!--입력받은 자료를 어떤 방식으로 서버로 넘길것-->
+                <input class="button1" type="submit" value="음성 인식하기">
+        </section>
+        <section>
+            <fieldset class="text-box">
+                <legend><b>Text</b></legend>
+                <textarea id="text" cols="30" rows="23">{{asr_result}}</textarea>
+            </fieldset>
+        </section>
+        <div class="nextbutton"><!--Next버튼 부분-->
+            <a href="/tts" class="nextbtn" style="text-decoration:none">Next</a>
+        </div>
+
+    </div>
+</body>
+</form>
+</html>

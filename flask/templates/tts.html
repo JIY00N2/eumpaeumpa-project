@@ -1,0 +1,45 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- content='  ' 에 IE= 호환될 버전 을 써주면 된다.
+    엣지가 마이크로소프트 최신버전이기 때문에 IE=Edge을 넣어주면 된다. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--초기 크기 설정 1=꽉찬 화면 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tts.css') }}">
+    <title>음파음파의 음성회의 기록 시스템</title>
+</head>
+<body>
+</body>
+    <div class="main-layout"><!--틀-->
+        <div class="main-title"><!--제목-->
+            <h1 class="title">Text to Summary</h1>
+        </div>
+        <div class="location"><!--text부분-->
+            <form action="/tts" method="post">
+                <section>
+                    <fieldset class="text-box">
+                        <legend><b>Text</b></legend>
+                        <!--input type="text" id="text" name="content" cols="30" rows="24"> </input>-->
+                        <textarea id="text" name="content" cols="30" rows="24">{{content_value}}</textarea>
+                    </fieldset>
+                </section>
+                <div class="summarybutton"><!--요약하기 버튼 부분-->
+                    <button type="submit" class="summarybtn">요약하기</button>
+                </div>
+            </form>
+        </div>
+        <div><!--Summary부분-->
+            <section>
+                <fieldset class="summarybox">
+                    <legend><b>Summary</b></legend>
+                    <textarea id="summary" cols="20" rows="24">{{summary_result}}</textarea>
+                </fieldset>
+            </section>
+        </div>
+        </div>
+        </div>
+    </div>
+</html>
