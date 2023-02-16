@@ -32,6 +32,6 @@
 <img src="https://user-images.githubusercontent.com/109654823/219270940-d5d5a3e5-5725-4fed-8fdc-9e6da689039a.png" width="70%">
 
 ### 관련 자료
-#### 1. 예비캡스톤 ppt https://docs.google.com/presentation/d/1Zh-zhI_MB3zB0pUIxY1nEpE6tDro6Vqk/edit#slide=id.p1
-#### 2. 캡스톤 ppt https://docs.google.com/presentation/d/1RNIG79pFDOdX6vT43sKmFyWQP0se5_qZ/edit#slide=id.p23
-#### 3. 캡스톤 시연 영상 https://youtu.be/GryO1fbYCeU
+#### 1. [예비캡스톤 ppt](https://docs.google.com/presentation/d/1Zh-zhI_MB3zB0pUIxY1nEpE6tDro6Vqk/edit#slide=id.p1)
+#### 2. [캡스톤 ppt](https://docs.google.com/presentation/d/1RNIG79pFDOdX6vT43sKmFyWQP0se5_qZ/edit#slide=id.p23)
+#### 3. [캡스톤 시연 영상](https://youtu.be/GryO1fbYCeU)
