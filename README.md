@@ -1,4 +1,4 @@
-# eumpaeumpa_team_project
+# eumpaeumpa-project
 
 ## 음성 요약 모델 개선 및 서비스화
 > 광운대학교 전자통신공학과 캡스톤 설계 디자인
